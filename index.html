@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Podcast Project</title>
+
+        <link rel="stylesheet" href="./styles.css">
+        <script src="./scripts.js" type="module" defer></script>
+       
+    </head>
+    <body>
+
+        <!-- HEADER including Nav and Icon -->
+    <nav class="navbar">
+        <div class="content">
+            <div class="logo">
+                <a href="#"><i> NETLIFY ` PODCAST</i></a></div>
+        <ul class="menu-list">
+            <div class="icon cancel-btn">
+                <i class="fas fa-times"></i>
+            </div>
+            <li><a href="#">Genres</a></li>
+            <li><a href="#">Playlist</a></li>
+            <li><a href="#">Search</a></li>
+        </ul>
+        <div class="icon menu-btn">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+
+   <!-- MY BACKGROUND PICTURE -->
+   <div class="banner"></div>
+   <div class="about">
+    <div class="content">
+        <div class="title">
+        </div>
+    </div>
+   </div>
+
+   <!-- My Podcasts ` Carousel
+   <div class="main-div">
+    <div class="center_div" id="centerdiv">
+    </div>
+   </div> -->
+<script>
+     /** the Burger thingy and an exit(X) of the navbar  */
+ const navbar = document.querySelector(".navbar")
+ const menu = document.querySelector(".menu-list");
+ const menuBtn = document.querySelector(".menu-btn");
+ const cancelBtn = document.querySelector(".cancel-btn");
+ menuBtn.onclick = ()=> {
+     menu.classlist.add("active");
+     menuBtn.classlist.add("hide");
+ }
+ cancelBtn.onclick = ()=>{
+     menu.classList.remove("active");
+     menuBtn.classlist.remove("hide");
+ }
+
+ window.onscroll = ()=>{
+     this.scrollY > 20 ? navbar.classList.add("sticky") : navbar.classList.remove("sticky")
+}
+</script>
+  
+
+
+        <podcast-app></podcast-app>
+    </body>
+</html>
